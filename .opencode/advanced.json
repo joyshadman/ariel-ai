@@ -1,0 +1,43 @@
+{
+  "version": "0.2.0",
+  "setupDate": "2026-10-13",
+  "languages": [
+    "node"
+  ],
+  "framework": "nextjs",
+  "packageManager": "npm",
+  "agents": [
+    "backend-developer",
+    "frontend-developer",
+    "fullstack-developer",
+    "websocket-engineer",
+    "typescript-pro",
+    "javascript-pro",
+    "react-specialist",
+    "vue-expert",
+    "angular-architect",
+    "nextjs-developer",
+    "devops-engineer",
+    "code-reviewer",
+    "build-engineer",
+    "dependency-manager",
+    "git-workflow-manager",
+    "test-writer"
+  ],
+  "skills": [
+    "git-release",
+    "test-patterns",
+    "dependency-audit",
+    "changelog-generate",
+    "ci-pipeline"
+  ],
+  "modelStrategy": "cost-optimized",
+  "mcp": [
+    "context7",
+    "fetch",
+    "git",
+    "postgres",
+    "vercel",
+    "figma"
+  ]
+}
