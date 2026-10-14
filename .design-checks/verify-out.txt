@@ -1,0 +1,205 @@
+captured 01-home-desktop
+captured 02-pricing-desktop
+captured 02b-pricing-yearly-desktop
+captured 03-about-desktop
+captured 04-chat-welcome-desktop
+captured 04b-chat-typing-desktop
+captured 04c-chat-reply-desktop
+captured 05-settings-desktop
+captured 05b-settings-saved-desktop
+captured 06-login-desktop
+captured 10-home-mobile
+390 home overflow: false
+captured 10b-home-mobile-menu
+captured 11-chat-mobile
+captured 13-settings-mobile
+captured 12-login-mobile
+320 overflow home: false
+320 overflow pricing: false
+320 overflow about: false
+320 overflow chat: false
+320 overflow settings: false
+320 overflow login: false
+captured 20-home-reduced-motion
+
+=== console/page errors ===
+[reduced console] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+%s%s https://react.dev/link/hydration-mismatch 
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} renderTree={{...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <Page>
+            <App>
+              <div className="flex min-h...">
+                <Header>
+                  <header className="sticky top...">
+                    <div className="mx-auto fl...">
+                      <Logo>
+                      <nav>
+                      <div className="hidden ite...">
+                        <Button kind="ghost" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Sign in
+                        <Button kind="primary" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Get started
+                      ...
+                    ...
+                ...
+                  <Home>
+                    <div className="flex flex-...">
+                      <section className="mx-auto w-...">
+                        <div className="grid items...">
+                          ...
+                            <div style={{}} ref={function useMotionRef.useCallback}>
+                              <motion.span variants={{hidden:{...}, ...}} className="inline-fle...">
+                                <span
+                                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white p..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.h1 variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <h1
+                                  className="mt-6 max-w-[560px] font-display text-[46px] leading-[1.03] tracking-[-.03..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.p variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <p
+                                  className="mt-6 max-w-[480px] text-[16px] leading-8 text-muted min-[700px]:text-[17px]"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 Ariel gathers OpenAI, Anthropic, Gemini and Mistral under one calm interface. Add you...
+                              <motion.div variants={{hidden:{...}, ...}} className="mt-8 flex ...">
+                                <div
+                                  className="mt-8 flex flex-wrap items-center gap-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                                  <Button kind="primary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
+                                  <Button kind="secondary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
++                                       See pricing
+                              <motion.ul variants={{hidden:{...}, ...}} className="mt-9 flex ...">
+                                <ul
+                                  className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                          <HeroVisual>
+                            <div className="relative m...">
+                              <div>
+                              <div>
+                              <motion.div className="absolute h..." animate={undefined} transition={{duration:28, ...}}>
+                                <div
+                                  className="absolute h-[74%] w-[74%] rounded-full border border-dashed border-coral/50"
+                                  style={{
+-                                   transform: "rotate(360deg)"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <span>
+                              <span>
+                              <motion.div className="relative z..." animate={undefined} transition={{duration:6, ...}}>
+                                <div
+                                  className="relative z-10 w-[300px] max-w-full -rotate-2 rounded-[24px] border border..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute l..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute left-0 top-[16%] hidden items-center gap-2 rounded-full border b..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute b..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute bottom-[14%] right-0 hidden items-center gap-2 rounded-full bord..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                      <section>
+                      <section>
+                      ...
+                        <div className={undefined}>
+                          <div className="flex flex-...">
+                            <h2>
+                            <p>
+                            <Button kind="primary" onClick={function onClick}>
+                              <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                <button
+                                  type="button"
+                                  onClick={function onClick}
+                                  disabled={false}
+                                  aria-label={undefined}
+                                  className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full..."}
+                                  style={{}}
+                                  ref={function useMotionRef.useCallback}
+-                                 tabindex="0"
+                                >
+                ...
+        ...
+      ...
+

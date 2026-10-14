@@ -185,6 +185,7 @@ export type UserWhereInput = {
   apiKeys?: Prisma.ApiKeyListRelationFilter
   chats?: Prisma.ChatListRelationFilter
   credits?: Prisma.CreditLedgerListRelationFilter
+  usage?: Prisma.UsageEventListRelationFilter
 }
 
 export type UserOrderByWithRelationInput = {
@@ -196,6 +197,7 @@ export type UserOrderByWithRelationInput = {
   apiKeys?: Prisma.ApiKeyOrderByRelationAggregateInput
   chats?: Prisma.ChatOrderByRelationAggregateInput
   credits?: Prisma.CreditLedgerOrderByRelationAggregateInput
+  usage?: Prisma.UsageEventOrderByRelationAggregateInput
 }
 
 export type UserWhereUniqueInput = Prisma.AtLeast<{
@@ -210,6 +212,7 @@ export type UserWhereUniqueInput = Prisma.AtLeast<{
   apiKeys?: Prisma.ApiKeyListRelationFilter
   chats?: Prisma.ChatListRelationFilter
   credits?: Prisma.CreditLedgerListRelationFilter
+  usage?: Prisma.UsageEventListRelationFilter
 }, "id" | "email">
 
 export type UserOrderByWithAggregationInput = {
@@ -243,6 +246,7 @@ export type UserCreateInput = {
   apiKeys?: Prisma.ApiKeyCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateInput = {
@@ -254,6 +258,7 @@ export type UserUncheckedCreateInput = {
   apiKeys?: Prisma.ApiKeyUncheckedCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerUncheckedCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserUpdateInput = {
@@ -265,6 +270,7 @@ export type UserUpdateInput = {
   apiKeys?: Prisma.ApiKeyUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateInput = {
@@ -276,6 +282,7 @@ export type UserUncheckedUpdateInput = {
   apiKeys?: Prisma.ApiKeyUncheckedUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUncheckedUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateManyInput = {
@@ -385,6 +392,20 @@ export type UserUpdateOneRequiredWithoutCreditsNestedInput = {
   update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutCreditsInput, Prisma.UserUpdateWithoutCreditsInput>, Prisma.UserUncheckedUpdateWithoutCreditsInput>
 }
 
+export type UserCreateNestedOneWithoutUsageInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUsageInput, Prisma.UserUncheckedCreateWithoutUsageInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUsageInput
+  connect?: Prisma.UserWhereUniqueInput
+}
+
+export type UserUpdateOneRequiredWithoutUsageNestedInput = {
+  create?: Prisma.XOR<Prisma.UserCreateWithoutUsageInput, Prisma.UserUncheckedCreateWithoutUsageInput>
+  connectOrCreate?: Prisma.UserCreateOrConnectWithoutUsageInput
+  upsert?: Prisma.UserUpsertWithoutUsageInput
+  connect?: Prisma.UserWhereUniqueInput
+  update?: Prisma.XOR<Prisma.XOR<Prisma.UserUpdateToOneWithWhereWithoutUsageInput, Prisma.UserUpdateWithoutUsageInput>, Prisma.UserUncheckedUpdateWithoutUsageInput>
+}
+
 export type UserCreateWithoutApiKeysInput = {
   id?: string
   email: string
@@ -393,6 +414,7 @@ export type UserCreateWithoutApiKeysInput = {
   updatedAt?: Date | string
   chats?: Prisma.ChatCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutApiKeysInput = {
@@ -403,6 +425,7 @@ export type UserUncheckedCreateWithoutApiKeysInput = {
   updatedAt?: Date | string
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerUncheckedCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutApiKeysInput = {
@@ -429,6 +452,7 @@ export type UserUpdateWithoutApiKeysInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   chats?: Prisma.ChatUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutApiKeysInput = {
@@ -439,6 +463,7 @@ export type UserUncheckedUpdateWithoutApiKeysInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUncheckedUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutChatsInput = {
@@ -449,6 +474,7 @@ export type UserCreateWithoutChatsInput = {
   updatedAt?: Date | string
   apiKeys?: Prisma.ApiKeyCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutChatsInput = {
@@ -459,6 +485,7 @@ export type UserUncheckedCreateWithoutChatsInput = {
   updatedAt?: Date | string
   apiKeys?: Prisma.ApiKeyUncheckedCreateNestedManyWithoutUserInput
   credits?: Prisma.CreditLedgerUncheckedCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutChatsInput = {
@@ -485,6 +512,7 @@ export type UserUpdateWithoutChatsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   apiKeys?: Prisma.ApiKeyUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutChatsInput = {
@@ -495,6 +523,7 @@ export type UserUncheckedUpdateWithoutChatsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   apiKeys?: Prisma.ApiKeyUncheckedUpdateManyWithoutUserNestedInput
   credits?: Prisma.CreditLedgerUncheckedUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUncheckedUpdateManyWithoutUserNestedInput
 }
 
 export type UserCreateWithoutCreditsInput = {
@@ -505,6 +534,7 @@ export type UserCreateWithoutCreditsInput = {
   updatedAt?: Date | string
   apiKeys?: Prisma.ApiKeyCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventCreateNestedManyWithoutUserInput
 }
 
 export type UserUncheckedCreateWithoutCreditsInput = {
@@ -515,6 +545,7 @@ export type UserUncheckedCreateWithoutCreditsInput = {
   updatedAt?: Date | string
   apiKeys?: Prisma.ApiKeyUncheckedCreateNestedManyWithoutUserInput
   chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUserInput
+  usage?: Prisma.UsageEventUncheckedCreateNestedManyWithoutUserInput
 }
 
 export type UserCreateOrConnectWithoutCreditsInput = {
@@ -541,6 +572,7 @@ export type UserUpdateWithoutCreditsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   apiKeys?: Prisma.ApiKeyUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUpdateManyWithoutUserNestedInput
 }
 
 export type UserUncheckedUpdateWithoutCreditsInput = {
@@ -551,6 +583,67 @@ export type UserUncheckedUpdateWithoutCreditsInput = {
   updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
   apiKeys?: Prisma.ApiKeyUncheckedUpdateManyWithoutUserNestedInput
   chats?: Prisma.ChatUncheckedUpdateManyWithoutUserNestedInput
+  usage?: Prisma.UsageEventUncheckedUpdateManyWithoutUserNestedInput
+}
+
+export type UserCreateWithoutUsageInput = {
+  id?: string
+  email: string
+  name?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  apiKeys?: Prisma.ApiKeyCreateNestedManyWithoutUserInput
+  chats?: Prisma.ChatCreateNestedManyWithoutUserInput
+  credits?: Prisma.CreditLedgerCreateNestedManyWithoutUserInput
+}
+
+export type UserUncheckedCreateWithoutUsageInput = {
+  id?: string
+  email: string
+  name?: string | null
+  createdAt?: Date | string
+  updatedAt?: Date | string
+  apiKeys?: Prisma.ApiKeyUncheckedCreateNestedManyWithoutUserInput
+  chats?: Prisma.ChatUncheckedCreateNestedManyWithoutUserInput
+  credits?: Prisma.CreditLedgerUncheckedCreateNestedManyWithoutUserInput
+}
+
+export type UserCreateOrConnectWithoutUsageInput = {
+  where: Prisma.UserWhereUniqueInput
+  create: Prisma.XOR<Prisma.UserCreateWithoutUsageInput, Prisma.UserUncheckedCreateWithoutUsageInput>
+}
+
+export type UserUpsertWithoutUsageInput = {
+  update: Prisma.XOR<Prisma.UserUpdateWithoutUsageInput, Prisma.UserUncheckedUpdateWithoutUsageInput>
+  create: Prisma.XOR<Prisma.UserCreateWithoutUsageInput, Prisma.UserUncheckedCreateWithoutUsageInput>
+  where?: Prisma.UserWhereInput
+}
+
+export type UserUpdateToOneWithWhereWithoutUsageInput = {
+  where?: Prisma.UserWhereInput
+  data: Prisma.XOR<Prisma.UserUpdateWithoutUsageInput, Prisma.UserUncheckedUpdateWithoutUsageInput>
+}
+
+export type UserUpdateWithoutUsageInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apiKeys?: Prisma.ApiKeyUpdateManyWithoutUserNestedInput
+  chats?: Prisma.ChatUpdateManyWithoutUserNestedInput
+  credits?: Prisma.CreditLedgerUpdateManyWithoutUserNestedInput
+}
+
+export type UserUncheckedUpdateWithoutUsageInput = {
+  id?: Prisma.StringFieldUpdateOperationsInput | string
+  email?: Prisma.StringFieldUpdateOperationsInput | string
+  name?: Prisma.NullableStringFieldUpdateOperationsInput | string | null
+  createdAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  updatedAt?: Prisma.DateTimeFieldUpdateOperationsInput | Date | string
+  apiKeys?: Prisma.ApiKeyUncheckedUpdateManyWithoutUserNestedInput
+  chats?: Prisma.ChatUncheckedUpdateManyWithoutUserNestedInput
+  credits?: Prisma.CreditLedgerUncheckedUpdateManyWithoutUserNestedInput
 }
 
 
@@ -562,12 +655,14 @@ export type UserCountOutputType = {
   apiKeys: number
   chats: number
   credits: number
+  usage: number
 }
 
 export type UserCountOutputTypeSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
   apiKeys?: boolean | UserCountOutputTypeCountApiKeysArgs
   chats?: boolean | UserCountOutputTypeCountChatsArgs
   credits?: boolean | UserCountOutputTypeCountCreditsArgs
+  usage?: boolean | UserCountOutputTypeCountUsageArgs
 }
 
 /**
@@ -601,6 +696,13 @@ export type UserCountOutputTypeCountCreditsArgs<ExtArgs extends runtime.Types.Ex
   where?: Prisma.CreditLedgerWhereInput
 }
 
+/**
+ * UserCountOutputType without action
+ */
+export type UserCountOutputTypeCountUsageArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  where?: Prisma.UsageEventWhereInput
+}
+
 
 export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = runtime.Types.Extensions.GetSelect<{
   id?: boolean
@@ -611,6 +713,7 @@ export type UserSelect<ExtArgs extends runtime.Types.Extensions.InternalArgs = r
   apiKeys?: boolean | Prisma.User$apiKeysArgs<ExtArgs>
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   credits?: boolean | Prisma.User$creditsArgs<ExtArgs>
+  usage?: boolean | Prisma.User$usageArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }, ExtArgs["result"]["user"]>
 
@@ -643,6 +746,7 @@ export type UserInclude<ExtArgs extends runtime.Types.Extensions.InternalArgs = 
   apiKeys?: boolean | Prisma.User$apiKeysArgs<ExtArgs>
   chats?: boolean | Prisma.User$chatsArgs<ExtArgs>
   credits?: boolean | Prisma.User$creditsArgs<ExtArgs>
+  usage?: boolean | Prisma.User$usageArgs<ExtArgs>
   _count?: boolean | Prisma.UserCountOutputTypeDefaultArgs<ExtArgs>
 }
 export type UserIncludeCreateManyAndReturn<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {}
@@ -654,6 +758,7 @@ export type $UserPayload<ExtArgs extends runtime.Types.Extensions.InternalArgs =
     apiKeys: Prisma.$ApiKeyPayload<ExtArgs>[]
     chats: Prisma.$ChatPayload<ExtArgs>[]
     credits: Prisma.$CreditLedgerPayload<ExtArgs>[]
+    usage: Prisma.$UsageEventPayload<ExtArgs>[]
   }
   scalars: runtime.Types.Extensions.GetPayloadResult<{
     id: string
@@ -1058,6 +1163,7 @@ export interface Prisma__UserClient<T, Null = never, ExtArgs extends runtime.Typ
   apiKeys<T extends Prisma.User$apiKeysArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$apiKeysArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ApiKeyPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   chats<T extends Prisma.User$chatsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$chatsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$ChatPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   credits<T extends Prisma.User$creditsArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$creditsArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$CreditLedgerPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
+  usage<T extends Prisma.User$usageArgs<ExtArgs> = {}>(args?: Prisma.Subset<T, Prisma.User$usageArgs<ExtArgs>>): Prisma.PrismaPromise<runtime.Types.Result.GetResult<Prisma.$UsageEventPayload<ExtArgs>, T, "findMany", GlobalOmitOptions> | Null>
   /**
    * Attaches callbacks for the resolution and/or rejection of the Promise.
    * @param onfulfilled The callback to execute when the Promise is resolved.
@@ -1554,6 +1660,30 @@ export type User$creditsArgs<ExtArgs extends runtime.Types.Extensions.InternalAr
   take?: number
   skip?: number
   distinct?: Prisma.CreditLedgerScalarFieldEnum | Prisma.CreditLedgerScalarFieldEnum[]
+}
+
+/**
+ * User.usage
+ */
+export type User$usageArgs<ExtArgs extends runtime.Types.Extensions.InternalArgs = runtime.Types.Extensions.DefaultArgs> = {
+  /**
+   * Select specific fields to fetch from the UsageEvent
+   */
+  select?: Prisma.UsageEventSelect<ExtArgs> | null
+  /**
+   * Omit specific fields from the UsageEvent
+   */
+  omit?: Prisma.UsageEventOmit<ExtArgs> | null
+  /**
+   * Choose, which related nodes to fetch as well
+   */
+  include?: Prisma.UsageEventInclude<ExtArgs> | null
+  where?: Prisma.UsageEventWhereInput
+  orderBy?: Prisma.UsageEventOrderByWithRelationInput | Prisma.UsageEventOrderByWithRelationInput[]
+  cursor?: Prisma.UsageEventWhereUniqueInput
+  take?: number
+  skip?: number
+  distinct?: Prisma.UsageEventScalarFieldEnum | Prisma.UsageEventScalarFieldEnum[]
 }
 
 /**

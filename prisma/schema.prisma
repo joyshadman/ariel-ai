@@ -24,6 +24,7 @@ model User {
   apiKeys ApiKey[]
   chats   Chat[]
   credits CreditLedger[]
+  usage   UsageEvent[]
 }
 
 model ApiKey {
@@ -80,4 +81,15 @@ model CreditLedger {
   user User @relation(fields: [userId], references: [id], onDelete: Cascade)
 
   @@index([userId])
+}
+
+model UsageEvent {
+  id        String   @id @default(uuid())
+  userId    String
+  kind      String
+  createdAt DateTime @default(now())
+
+  user User @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@index([userId, kind, createdAt])
 }

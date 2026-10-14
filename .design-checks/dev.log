@@ -1,0 +1,488 @@
+
+> ariel-ai@0.1.0 dev
+> next dev
+
+▲ Next.js 16.4.0 (Turbopack)
+- Local:         http://localhost:3000
+- Network:       http://26.249.8.173:3000
+- Environments: .env
+✓ Ready in 381ms
+✓ Running next.config.ts took 34ms
+- Cache Components enabled
+- Partial Prefetching enabled
+
+ GET / 200 in 3.4s (next.js: 3.0s, proxy.ts: 181ms, application-code: 194ms)
+ GET / 200 in 89ms (next.js: 39ms, proxy.ts: 6ms, application-code: 44ms)
+ GET / 200 in 55ms (next.js: 5ms, proxy.ts: 6ms, application-code: 43ms)
+ GET / 200 in 54ms (next.js: 4ms, proxy.ts: 6ms, application-code: 44ms)
+ GET / 200 in 52ms (next.js: 5ms, proxy.ts: 7ms, application-code: 41ms)
+ GET / 200 in 46ms (next.js: 4ms, proxy.ts: 5ms, application-code: 37ms)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} renderTree={{...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <Page>
+            <App>
+              <div className="flex min-h...">
+                <Header>
+                  <header className="sticky top...">
+                    <div className="mx-auto fl...">
+                      <Logo>
+                      <nav>
+                      <div className="hidden ite...">
+                        <Button kind="ghost" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Sign in
+                        <Button kind="primary" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Get started
+                      ...
+                    ...
+                ...
+                  <Home>
+                    <div className="flex flex-...">
+                      <section className="mx-auto w-...">
+                        <div className="grid items...">
+                          ...
+                            <div style={{}} ref={function useMotionRef.useCallback}>
+                              <motion.span variants={{hidden:{...}, ...}} className="inline-fle...">
+                                <span
+                                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white p..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.h1 variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <h1
+                                  className="mt-6 max-w-[560px] font-display text-[46px] leading-[1.03] tracking-[-.03..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.p variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <p
+                                  className="mt-6 max-w-[480px] text-[16px] leading-8 text-muted min-[700px]:text-[17px]"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 Ariel gathers OpenAI, Anthropic, Gemini and Mistral under one calm interface. Add you...
+                              <motion.div variants={{hidden:{...}, ...}} className="mt-8 flex ...">
+                                <div
+                                  className="mt-8 flex flex-wrap items-center gap-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                                  <Button kind="primary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
+                                  <Button kind="secondary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
++                                       See pricing
+                              <motion.ul variants={{hidden:{...}, ...}} className="mt-9 flex ...">
+                                <ul
+                                  className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                          <HeroVisual>
+                            <div className="relative m...">
+                              <div>
+                              <div>
+                              <motion.div className="absolute h..." animate={undefined} transition={{duration:28, ...}}>
+                                <div
+                                  className="absolute h-[74%] w-[74%] rounded-full border border-dashed border-coral/50"
+                                  style={{
+-                                   transform: "rotate(360deg)"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <span>
+                              <span>
+                              <motion.div className="relative z..." animate={undefined} transition={{duration:6, ...}}>
+                                <div
+                                  className="relative z-10 w-[300px] max-w-full -rotate-2 rounded-[24px] border border..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute l..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute left-0 top-[16%] hidden items-center gap-2 rounded-full border b..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute b..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute bottom-[14%] right-0 hidden items-center gap-2 rounded-full bord..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                      <section>
+                      <section>
+                      ...
+                        <div className={undefined}>
+                          <div className="flex flex-...">
+                            <h2>
+                            <p>
+                            <Button kind="primary" onClick={function onClick}>
+                              <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                <button
+                                  type="button"
+                                  onClick={function onClick}
+                                  disabled={false}
+                                  aria-label={undefined}
+                                  className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full..."}
+                                  style={{}}
+                                  ref={function useMotionRef.useCallback}
+-                                 tabindex="0"
+                                >
+                ...
+        ...
+      ...
+ 
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 61ms (next.js: 5ms, proxy.ts: 9ms, application-code: 47ms)
+ GET / 200 in 50ms (next.js: 9ms, proxy.ts: 4ms, application-code: 37ms)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+ GET / 200 in 43ms (next.js: 3ms, proxy.ts: 5ms, application-code: 36ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+[browser] A tree hydrated but some attributes of the server rendered HTML didn't match the client properties. This won't be patched up. This can happen if a SSR-ed Client Component used:
+
+- A server/client branch `if (typeof window !== 'undefined')`.
+- Variable input such as `Date.now()` or `Math.random()` which changes each time it's called.
+- Date formatting in a user's locale which doesn't match the server.
+- External changing data without sending a snapshot of it along with the HTML.
+- Invalid HTML tag nesting.
+
+It can also happen if the client has a browser extension installed which messes with the HTML before React loaded.
+
+https://react.dev/link/hydration-mismatch
+
+  ...
+    <RedirectErrorBoundary router={{...}}>
+      <InnerLayoutRouter url="/" tree={[...]} params={{}} renderTree={{...}} segmentPath={[...]} ...>
+        <SegmentViewNode type="page" pagePath="page.tsx">
+          <SegmentTrieNode>
+          <Page>
+            <App>
+              <div className="flex min-h...">
+                <Header>
+                  <header className="sticky top...">
+                    <div className="mx-auto fl...">
+                      <Logo>
+                      <nav>
+                      <div className="hidden ite...">
+                        <Button kind="ghost" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Sign in
+                        <Button kind="primary" onClick={function onClick}>
+                          <motion.button type="button" onClick={function onClick} disabled={false} aria-label={undefined} ...>
+                            <button
+                              type="button"
+                              onClick={function onClick}
+                              disabled={false}
+                              aria-label={undefined}
+                              className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full px-..."}
+                              style={{}}
+                              ref={function useMotionRef.useCallback}
+-                             tabindex="0"
+                            >
++                             Get started
+                      ...
+                    ...
+                ...
+                  <Home>
+                    <div className="flex flex-...">
+                      <section className="mx-auto w-...">
+                        <div className="grid items...">
+                          ...
+                            <div style={{}} ref={function useMotionRef.useCallback}>
+                              <motion.span variants={{hidden:{...}, ...}} className="inline-fle...">
+                                <span
+                                  className="inline-flex items-center gap-2 rounded-full border border-line bg-white p..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.h1 variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <h1
+                                  className="mt-6 max-w-[560px] font-display text-[46px] leading-[1.03] tracking-[-.03..."
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.p variants={{hidden:{...}, ...}} className="mt-6 max-w...">
+                                <p
+                                  className="mt-6 max-w-[480px] text-[16px] leading-8 text-muted min-[700px]:text-[17px]"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
++                                 Ariel gathers OpenAI, Anthropic, Gemini and Mistral under one calm interface. Add you...
+                              <motion.div variants={{hidden:{...}, ...}} className="mt-8 flex ...">
+                                <div
+                                  className="mt-8 flex flex-wrap items-center gap-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                                  <Button kind="primary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
+                                  <Button kind="secondary" onClick={function onClick}>
+                                    <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                      <button
+                                        type="button"
+                                        onClick={function onClick}
+                                        disabled={false}
+                                        aria-label={undefined}
+                                        className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounde..."}
+                                        style={{}}
+                                        ref={function useMotionRef.useCallback}
+-                                       tabindex="0"
+                                      >
++                                       See pricing
+                              <motion.ul variants={{hidden:{...}, ...}} className="mt-9 flex ...">
+                                <ul
+                                  className="mt-9 flex flex-wrap items-center gap-x-6 gap-y-3"
++                                 style={{}}
+-                                 style={{opacity:"1",transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                          <HeroVisual>
+                            <div className="relative m...">
+                              <div>
+                              <div>
+                              <motion.div className="absolute h..." animate={undefined} transition={{duration:28, ...}}>
+                                <div
+                                  className="absolute h-[74%] w-[74%] rounded-full border border-dashed border-coral/50"
+                                  style={{
+-                                   transform: "rotate(360deg)"
+                                  }}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <span>
+                              <span>
+                              <motion.div className="relative z..." animate={undefined} transition={{duration:6, ...}}>
+                                <div
+                                  className="relative z-10 w-[300px] max-w-full -rotate-2 rounded-[24px] border border..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute l..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute left-0 top-[16%] hidden items-center gap-2 rounded-full border b..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                              <motion.div className="absolute b..." animate={undefined} transition={{duration:5, ...}}>
+                                <div
+                                  className="absolute bottom-[14%] right-0 hidden items-center gap-2 rounded-full bord..."
++                                 style={{}}
+-                                 style={{transform:"none"}}
+                                  ref={function useMotionRef.useCallback}
+                                >
+                      <section>
+                      <section>
+                      ...
+                        <div className={undefined}>
+                          <div className="flex flex-...">
+                            <h2>
+                            <p>
+                            <Button kind="primary" onClick={function onClick}>
+                              <motion.button type="button" onClick={function onClick} disabled={false} ...>
+                                <button
+                                  type="button"
+                                  onClick={function onClick}
+                                  disabled={false}
+                                  aria-label={undefined}
+                                  className={"inline-flex min-h-[44px] items-center justify-center gap-2 rounded-full..."}
+                                  style={{}}
+                                  ref={function useMotionRef.useCallback}
+-                                 tabindex="0"
+                                >
+                ...
+        ...
+      ...
+ 
+✓ Compiled in 66ms
+ GET / 200 in 255ms (next.js: 185ms, proxy.ts: 5ms, application-code: 65ms)
+ GET / 200 in 46ms (next.js: 4ms, proxy.ts: 4ms, application-code: 38ms)
+ GET / 200 in 45ms (next.js: 3ms, proxy.ts: 4ms, application-code: 37ms)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+ GET / 200 in 42ms (next.js: 4ms, proxy.ts: 4ms, application-code: 35ms)
+ GET / 200 in 60ms (next.js: 3ms, proxy.ts: 3ms, application-code: 53ms)
+ GET / 200 in 49ms (next.js: 3ms, proxy.ts: 3ms, application-code: 43ms)
+ GET / 200 in 62ms (next.js: 4ms, proxy.ts: 4ms, application-code: 54ms)
+ GET / 200 in 40ms (next.js: 2ms, proxy.ts: 3ms, application-code: 34ms)
+ GET / 200 in 44ms (next.js: 2ms, proxy.ts: 3ms, application-code: 39ms)
+ GET / 200 in 48ms (next.js: 3ms, proxy.ts: 4ms, application-code: 41ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+ GET / 200 in 44ms (next.js: 3ms, proxy.ts: 3ms, application-code: 38ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 55ms (next.js: 14ms, proxy.ts: 3ms, application-code: 38ms)
+ GET / 200 in 45ms (next.js: 4ms, proxy.ts: 5ms, application-code: 36ms)
+ GET / 200 in 42ms (next.js: 3ms, proxy.ts: 4ms, application-code: 35ms)
+ GET / 200 in 75ms (next.js: 24ms, proxy.ts: 4ms, application-code: 48ms)
+ GET / 200 in 45ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 50ms (next.js: 3ms, proxy.ts: 4ms, application-code: 44ms)
+ GET / 200 in 62ms (next.js: 3ms, proxy.ts: 6ms, application-code: 52ms)
+ GET / 200 in 43ms (next.js: 3ms, proxy.ts: 4ms, application-code: 36ms)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 3ms, application-code: 40ms)
+ GET / 200 in 43ms (next.js: 3ms, proxy.ts: 3ms, application-code: 36ms)
+ GET / 200 in 42ms (next.js: 2ms, proxy.ts: 4ms, application-code: 36ms)
+ GET / 200 in 49ms (next.js: 3ms, proxy.ts: 3ms, application-code: 43ms)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 40ms)
+ GET / 200 in 77ms (next.js: 31ms, proxy.ts: 3ms, application-code: 43ms)
+ GET / 200 in 45ms (next.js: 3ms, proxy.ts: 4ms, application-code: 38ms)
+ GET /?_cb=1791964510 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 39ms)
+ GET /?_cb=1791964510 200 in 46ms (next.js: 3ms, proxy.ts: 4ms, application-code: 40ms)
+ GET / 200 in 54ms (next.js: 4ms, proxy.ts: 3ms, application-code: 47ms)
+ GET / 200 in 46ms (next.js: 4ms, proxy.ts: 4ms, application-code: 39ms)
+ GET / 200 in 44ms (next.js: 4ms, proxy.ts: 4ms, application-code: 37ms)
+ GET / 200 in 50ms (next.js: 4ms, proxy.ts: 4ms, application-code: 43ms)
+ GET / 200 in 83ms (next.js: 38ms, proxy.ts: 4ms, application-code: 40ms)
+ GET / 200 in 53ms (next.js: 17ms, proxy.ts: 3ms, application-code: 34ms)
+ GET / 200 in 53ms (next.js: 15ms, proxy.ts: 4ms, application-code: 34ms)
+ GET / 200 in 55ms (next.js: 4ms, proxy.ts: 4ms, application-code: 47ms)
+ GET / 200 in 46ms (next.js: 3ms, proxy.ts: 5ms, application-code: 38ms)
+ GET / 200 in 50ms (next.js: 3ms, proxy.ts: 6ms, application-code: 42ms)
+ GET / 200 in 51ms (next.js: 4ms, proxy.ts: 4ms, application-code: 44ms)
+ GET / 200 in 145ms (next.js: 88ms, proxy.ts: 3ms, application-code: 54ms)
+ GET / 200 in 47ms (next.js: 3ms, proxy.ts: 3ms, application-code: 41ms)
+ GET / 200 in 50ms (next.js: 3ms, proxy.ts: 4ms, application-code: 44ms)
+ GET / 200 in 48ms (next.js: 3ms, proxy.ts: 4ms, application-code: 41ms)
+ GET / 200 in 51ms (next.js: 3ms, proxy.ts: 4ms, application-code: 44ms)
+ GET / 200 in 955ms (next.js: 902ms, proxy.ts: 3ms, application-code: 49ms)
+ GET / 200 in 80ms (next.js: 33ms, proxy.ts: 3ms, application-code: 44ms)
+ GET / 200 in 55ms (next.js: 4ms, proxy.ts: 4ms, application-code: 47ms)
+ GET / 200 in 39ms (next.js: 3ms, proxy.ts: 3ms, application-code: 34ms)
+ GET / 200 in 41ms (next.js: 3ms, proxy.ts: 3ms, application-code: 35ms)
+ GET / 200 in 38ms (next.js: 2ms, proxy.ts: 3ms, application-code: 32ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 57ms (next.js: 6ms, proxy.ts: 6ms, application-code: 45ms)
+[browser] You have Reduced Motion enabled on your device. Animations may not appear as expected.. For more information and steps for solving, visit https://motion.dev/troubleshooting/reduced-motion-disabled (components/App.tsx:36:34)
+ GET / 200 in 51ms (next.js: 11ms, proxy.ts: 3ms, application-code: 36ms)
+ GET /home 404 in 965ms (next.js: 928ms, proxy.ts: 4ms, application-code: 32ms)
+ GET /home 404 in 1144ms (next.js: 5ms, proxy.ts: 1111ms, application-code: 28ms)
+ GET /home 404 in 44ms (next.js: 5ms, proxy.ts: 3ms, application-code: 37ms)
+ GET /home 404 in 133ms (next.js: 5ms, proxy.ts: 102ms, application-code: 27ms)
+ GET /home 404 in 104ms (next.js: 5ms, proxy.ts: 73ms, application-code: 27ms)
+ GET /home 404 in 158ms (next.js: 5ms, proxy.ts: 125ms, application-code: 27ms)
+ GET /home 404 in 126ms (next.js: 4ms, proxy.ts: 97ms, application-code: 24ms)
+ GET / 200 in 403ms (next.js: 9ms, proxy.ts: 359ms, application-code: 35ms)
+✓ Compiled in 239ms
+✓ Compiled in 186ms
+ GET /home 404 in 101ms (next.js: 69ms, proxy.ts: 5ms, application-code: 27ms)
+ GET /home 404 in 174ms (next.js: 85ms, proxy.ts: 6ms, application-code: 82ms)
+ GET / 200 in 765ms (next.js: 63ms, proxy.ts: 681ms, application-code: 21ms)
+ GET /home 404 in 105ms (next.js: 80ms, proxy.ts: 6ms, application-code: 19ms)
+ GET /home 404 in 90ms (next.js: 18ms, proxy.ts: 6ms, application-code: 66ms)
+ GET / 404 in 197ms (next.js: 15ms, proxy.ts: 120ms, application-code: 62ms)
+ GET / 404 in 135ms (next.js: 6ms, proxy.ts: 94ms, application-code: 36ms)
+ GET /home 404 in 49ms (next.js: 28ms, proxy.ts: 3ms, application-code: 18ms)
+ GET /home 404 in 33ms (next.js: 4ms, proxy.ts: 3ms, application-code: 26ms)
+✓ Compiled in 49ms
+ GET /home 404 in 294ms (next.js: 241ms, proxy.ts: 4ms, application-code: 48ms)
+ GET / 200 in 775ms (next.js: 636ms, proxy.ts: 94ms, application-code: 45ms)
+ GET /home 404 in 87ms (next.js: 17ms, proxy.ts: 9ms, application-code: 61ms)
+ GET / 200 in 196ms (next.js: 31ms, proxy.ts: 95ms, application-code: 70ms)
+ GET /home 404 in 237ms (next.js: 82ms, proxy.ts: 9ms, application-code: 146ms)
+ GET / 200 in 436ms (next.js: 122ms, proxy.ts: 176ms, application-code: 139ms)
+ GET / 200 in 247ms (next.js: 55ms, proxy.ts: 91ms, application-code: 102ms)
+ GET / 200 in 231ms (next.js: 4ms, proxy.ts: 149ms, application-code: 78ms)
+ GET /home 404 in 78ms (next.js: 9ms, proxy.ts: 6ms, application-code: 63ms)
+ GET /home 404 in 77ms (next.js: 45ms, proxy.ts: 6ms, application-code: 25ms)
+ GET /home 404 in 59ms (next.js: 9ms, proxy.ts: 3ms, application-code: 47ms)
+ GET / 200 in 230ms (next.js: 48ms, proxy.ts: 139ms, application-code: 44ms)
+✓ Compiled in 88ms
+✓ Compiled in 64ms
+✓ Compiled in 123ms
+✓ Compiled in 92ms
+ GET /home 404 in 3.5s (next.js: 3.4s, proxy.ts: 9ms, application-code: 65ms)
+ GET / 200 in 4.0s (next.js: 2.7s, proxy.ts: 1280ms, application-code: 40ms)
+ GET /home 404 in 42ms (next.js: 8ms, proxy.ts: 4ms, application-code: 30ms)
+✓ Compiled in 447ms
+[?25h

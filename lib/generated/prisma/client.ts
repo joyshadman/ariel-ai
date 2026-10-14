@@ -66,3 +66,8 @@ export type Message = Prisma.MessageModel
  * 
  */
 export type CreditLedger = Prisma.CreditLedgerModel
+/**
+ * Model UsageEvent
+ * 
+ */
+export type UsageEvent = Prisma.UsageEventModel

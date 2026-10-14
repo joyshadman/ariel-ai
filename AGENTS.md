@@ -32,7 +32,15 @@ Read `.env` (gitignored) — never commit secrets. `.env.example` mirrors the
 shape. Required vars: `DATABASE_URL` (Neon), `NEXT_PUBLIC_SUPABASE_URL`,
 `NEXT_PUBLIC_SUPABASE_PUBLISHABLE_KEY` (sb_publishable_ key — Supabase email
 confirmation is **off**), `AI_KEY_ENCRYPTION_SECRET` (base64 32-byte).
-Optional: `openrouter_key` for live e2e testing.
+Optional: `FREE_TIER_OPENROUTER_KEY` (server key powering the free tier;
+falls back to `openrouter_key`), `openrouter_key` for live e2e testing.
+
+## Free tier
+
+Signed-in users get **Ariel Free** (`openai/gpt-oss-120b` via OpenRouter on the
+server key) limited to `FREE_DAILY_LIMIT` (20) messages per user per UTC day,
+enforced server-side in `/api/chat` via `UsageEvent` rows (`lib/ai/usage.ts`).
+BYOK requests never touch the free quota.
 
 ## Context files
 

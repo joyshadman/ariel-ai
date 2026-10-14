@@ -1,0 +1,190 @@
+
+========== / ==========
+- banner:
+  - button "Ariel home": ariel
+  - navigation "Primary":
+    - button "Home"
+    - button "Chat"
+    - button "Pricing"
+    - button "About"
+  - button "Sign in"
+  - button "Get started"
+- main:
+  - text: Bring your own key
+  - heading "Think better with every model you trust" [level=1]:
+    - text: Think
+    - emphasis: better
+    - text: with every model you trust
+  - paragraph: Ariel gathers OpenAI, Anthropic, Gemini and Mistral under one calm interface. Add your own key, pick a model, and start thinking — nothing resold, nothing marked up.
+  - button "Start chatting"
+  - button "See pricing"
+  - list:
+    - listitem: No card required
+    - listitem: Keys encrypted at rest
+    - listitem: Your data stays yours
+  - paragraph: Ariel
+  - paragraph: GPT-4.1 · your key
+  - text: Summarise this Write a tagline Explain simply
+  - paragraph: Here’s a calmer way to think it through — I’ll keep it short and useful.
+  - text: Ask anything… Key encrypted Deep think ready
+  - paragraph: One home for the models you trust
+  - text: OpenAI Anthropic Gemini Mistral
+  - heading "Bring your own key" [level=3]
+  - paragraph: Paste a key once and Ariel talks straight to your provider. No markup, no middleman, no surprise invoice.
+  - text: Provider key sk-••••••••••••••d01a Encrypted with AES-256-GCM
+  - heading "Choose how Ariel thinks" [level=3]
+  - paragraph: Switch between fast, balanced and deep models mid-conversation without losing the thread.
+  - heading "Private from the start" [level=3]
+  - paragraph: Your prompts travel only between you and the provider you picked. Ariel never sees your key in the clear and never trains on your conversations.
+  - heading "A calmer way to work with AI" [level=2]
+  - paragraph: Keep the models you love, drop the tab-hoarding. Ariel gives every conversation a quiet, consistent home.
+  - button "Open Ariel"
+- contentinfo:
+  - button "Ariel home": ariel
+  - paragraph: One calm home for the models you already trust, powered by your own key.
+  - text: Private by default
+  - navigation "Product":
+    - heading "Product" [level=3]
+    - list:
+      - listitem:
+        - button "Chat"
+      - listitem:
+        - button "Pricing"
+      - listitem:
+        - button "Settings"
+  - navigation "Company":
+    - heading "Company" [level=3]
+    - list:
+      - listitem:
+        - button "About"
+      - listitem:
+        - button "Get started"
+  - text: © Ariel. All rights reserved. Bring your own key. No inference resold.
+- alert
+
+========== /Pricing ==========
+- text: Simple pricing
+- heading "Pay once for the workspace. Bring your own intelligence." [level=1]:
+  - text: Pay once for the workspace. Bring your own
+  - emphasis: intelligence
+  - text: .
+- paragraph: Ariel never marks up inference. You pay your provider directly — the plan only covers the calm, considered surface around it.
+- group "Billing period":
+  - button "monthly" [pressed]
+  - button "yearly-20%"
+- heading "Free" [level=2]
+- paragraph: Everything you need to try Ariel with your own key.
+- text: $0 forever
+- paragraph: billed monthly
+- list:
+  - listitem: Bring your own API key
+  - listitem: All four providers
+  - listitem: Unlimited conversations
+  - listitem: Local history
+- button "Start free"
+- text: Most popular
+- heading "Premium" [level=2]
+- paragraph: For people who live in a chat window all day.
+- text: $18 / month
+- paragraph: billed monthly
+- list:
+  - listitem: Everything in Free
+  - listitem: Priority streaming
+  - listitem: Cloud-synced history
+  - listitem: Custom system prompts
+  - listitem: Early access models
+- button "Go Premium"
+- heading "Teams" [level=2]
+- paragraph: Shared keys, shared context, one calm workspace.
+- text: $32 / month
+- paragraph: billed monthly
+- list:
+  - listitem: Everything in Premium
+  - listitem: Shared prompt library
+  - listitem: Role-based access
+  - listitem: Usage overview
+- button "Contact us"
+- button "Open Next.js Dev Tools":
+  - img
+- alert
+
+========== /About ==========
+- text: Our story
+- heading "We built the calm room for a very loud conversation" [level=1]:
+  - text: We built the calm room for a very loud
+  - emphasis: conversation
+- paragraph: "Ariel started as a single question: what if chatting with AI felt less like juggling tabs and more like sitting down with a good notebook?"
+- paragraph: Manifesto
+- heading "Tools should recede. Thinking should stay." [level=2]
+- paragraph: Every AI product promises more — more models, more panels, more notifications. We think the best interface is the one you forget you are using.
+- paragraph: Ariel brings your providers together, keeps the thread, and then gets out of the way. No upsells buried in the reply, no inference marked up on top of the key you already pay for.
+- paragraph: It is a small, deliberate product for people who would rather own their tools than rent their attention.
+- heading "Own your stack" [level=3]
+- paragraph: Your key, your provider, your bill. Ariel stays a thin, honest layer on top of tools you already chose.
+- heading "Think in context" [level=3]
+- paragraph: Conversations keep their thread across models, so switching never means starting over.
+- heading "Quiet by default" [level=3]
+- paragraph: No trackers, no training on your words, no growth loops. Just a calm place to think.
+- heading "Come think with us" [level=2]
+- paragraph: Bring a key, bring a question. Ariel is ready whenever you are.
+- button "Start chatting"
+- button "Open Next.js Dev Tools":
+  - img
+- alert
+
+========== /Login ==========
+- main:
+  - button "Ariel home": ariel
+  - heading "Welcome back" [level=1]
+  - paragraph: Sign in to pick up where your thinking left off.
+  - button "G Continue with Google"
+  - text: or Email
+  - textbox "Email":
+    - /placeholder: you@example.com
+  - text: Password
+  - textbox "Password":
+    - /placeholder: ••••••••
+  - button "Show password"
+  - checkbox "Remember me" [checked]
+  - text: Remember me
+  - button "Forgot password?"
+  - button "Sign in"
+  - paragraph:
+    - text: New to Ariel?
+    - button "Create an account"
+- button "Open Next.js Dev Tools":
+  - img
+- alert
+
+========== /Settings ==========
+- banner:
+  - button "Ariel home": ariel
+  - text: Settings
+  - button "Back to chat"
+- navigation "Settings sections":
+  - button "Providers"
+  - button "Security"
+  - button "Account"
+- heading "API providers" [level=1]
+- paragraph: Add a key once and Ariel talks straight to your provider. Keys are encrypted before they ever reach the database.
+- paragraph: OpenAI
+- paragraph: api.openai.com
+- text: Not connected API key
+- textbox "API key":
+  - /placeholder: sk-…
+- button "Save key" [disabled]
+- text: Stored as sk-••••d01a
+- paragraph: Anthropic
+- paragraph: Not connected
+- button "Add key"
+- heading "Security" [level=2]
+- paragraph: Encrypted at rest, never resold
+- paragraph: Keys are sealed with AES-256-GCM before storage and decrypted only in memory at request time. Ariel never proxies inference on its own accounts and never logs your conversations.
+- heading "Account" [level=2]
+- text: A
+- paragraph: Alex Rivera
+- paragraph: alex@example.com
+- button "Sign out"
+- button "Open Next.js Dev Tools":
+  - img
+- alert

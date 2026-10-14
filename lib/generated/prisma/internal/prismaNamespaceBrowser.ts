@@ -55,7 +55,8 @@ export const ModelName = {
   ApiKey: 'ApiKey',
   Chat: 'Chat',
   Message: 'Message',
-  CreditLedger: 'CreditLedger'
+  CreditLedger: 'CreditLedger',
+  UsageEvent: 'UsageEvent'
 } as const
 
 export type ModelName = (typeof ModelName)[keyof typeof ModelName]
@@ -133,6 +134,16 @@ export const CreditLedgerScalarFieldEnum = {
 } as const
 
 export type CreditLedgerScalarFieldEnum = (typeof CreditLedgerScalarFieldEnum)[keyof typeof CreditLedgerScalarFieldEnum]
+
+
+export const UsageEventScalarFieldEnum = {
+  id: 'id',
+  userId: 'userId',
+  kind: 'kind',
+  createdAt: 'createdAt'
+} as const
+
+export type UsageEventScalarFieldEnum = (typeof UsageEventScalarFieldEnum)[keyof typeof UsageEventScalarFieldEnum]
 
 
 export const SortOrder = {

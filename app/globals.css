@@ -1,26 +1,46 @@
+@import url("https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600&family=DM+Serif+Display:ital@0;1&display=swap");
 @import "tailwindcss";
 
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
+@theme {
+  --color-paper: #f8f6f0;
+  --color-white: #fffefb;
+  --color-ink: #1d1d1b;
+  --color-muted: #696762;
+  --color-line: #dedbd2;
+  --color-coral: #ed745e;
+  --color-coral-dark: #d95f4a;
+  --color-coral-soft: #f9e5de;
+  --color-lavender: #ddd8f7;
+  --color-green: #dcebdd;
+
+  --color-error: #b23b2e;
+  --color-error-soft: #f6e2de;
+  --color-green-ink: #356d3c;
+
+  --color-panel: #f0eee7;
+  --color-panel-2: #eae7df;
+  --color-panel-3: #f1efe9;
+  --color-panel-4: #e3e0d7;
+
+  --color-ink-soft: #b9b6ae;
+  --color-ink-mute: #aaa79f;
+
+  --font-sans: "DM Sans", ui-sans-serif, system-ui, -apple-system, sans-serif;
+  --font-display: "DM Serif Display", ui-serif, Georgia, serif;
 }
 
-@theme inline {
-  --color-background: var(--background);
-  --color-foreground: var(--foreground);
-  --font-sans: var(--font-geist-sans);
-  --font-mono: var(--font-geist-mono);
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
+html {
+  scroll-behavior: smooth;
+  font-synthesis: none;
 }
 
 body {
-  background: var(--background);
-  color: var(--foreground);
-  font-family: Arial, Helvetica, sans-serif;
+  background: var(--color-paper);
+  color: var(--color-ink);
+  font-family: var(--font-sans);
+}
+
+::selection {
+  background: var(--color-coral-soft);
+  color: var(--color-ink);
 }
