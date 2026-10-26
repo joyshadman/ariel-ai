@@ -35,6 +35,18 @@ confirmation is **off**), `AI_KEY_ENCRYPTION_SECRET` (base64 32-byte).
 Optional: `FREE_TIER_OPENROUTER_KEY` (server key powering the free tier;
 falls back to `openrouter_key`), `openrouter_key` for live e2e testing.
 
+## Routing & auth redirects
+
+Next.js App Router only (no React Router). Production:
+`https://ariel-ai-chi.vercel.app`. No app-URL env var — origins come from the
+request, internal redirects are relative, and post-login `?next=` is validated by
+`safeRedirectPath()` in `lib/auth/redirect.ts`. Supabase → Authentication → URL
+Configuration must have Site URL = production URL and Redirect URLs
+`https://ariel-ai-chi.vercel.app/**` + `http://localhost:3000/**`; otherwise
+Supabase falls back to the Site URL (this caused the prod → localhost bug). Vercel
+needs the same env vars as `.env` (no `openrouter_key` needed; set
+`FREE_TIER_OPENROUTER_KEY`). See `context/architecture.md`.
+
 ## Free tier
 
 Signed-in users get **Ariel Free** (`openai/gpt-oss-120b` via OpenRouter on the

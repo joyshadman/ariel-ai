@@ -1,4 +1,5 @@
 import { Login } from "@/components/pages/Login";
+import { safeRedirectPath } from "@/lib/auth/redirect";
 
 export const metadata = {
   title: "Sign in",
@@ -7,9 +8,13 @@ export const metadata = {
 export const instant = false;
 
 export default async function LoginPage({ searchParams }: PageProps<"/login">) {
-  const { error } = await searchParams;
+  const { error, next } = await searchParams;
 
   return (
-    <Login oauthError={error === "oauth"} resetError={error === "reset"} />
+    <Login
+      oauthError={error === "oauth"}
+      resetError={error === "reset"}
+      next={safeRedirectPath(next)}
+    />
   );
 }

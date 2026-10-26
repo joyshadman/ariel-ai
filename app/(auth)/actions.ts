@@ -3,6 +3,7 @@
 import { headers } from "next/headers";
 import { redirect } from "next/navigation";
 import { z } from "zod";
+import { safeRedirectPath } from "@/lib/auth/redirect";
 import { createServerSupabase } from "@/lib/supabase/server";
 
 const LoginSchema = z.object({
@@ -50,7 +51,7 @@ export async function loginAction(
     return { error: "Invalid email or password." };
   }
 
-  redirect("/chat");
+  redirect(safeRedirectPath(formData.get("next")));
 }
 
 export async function signupAction(
@@ -82,7 +83,7 @@ export async function signupAction(
     };
   }
 
-  redirect("/chat");
+  redirect(safeRedirectPath(formData.get("next")));
 }
 
 export async function logoutAction() {

@@ -53,6 +53,29 @@
 - Ownership: chats, API keys, messages are scoped by `userId`. Mutations verify
   `chat.userId === dbUser.id` before writing/returning.
 
+## Routing and Auth Redirects
+
+- Routing is Next.js App Router only. Internal navigation goes through
+  `components/navigation.tsx` (`router.push`) or `next/link` — client-side, no
+  full reloads. Do **not** add React Router; it would be a second router.
+- No absolute app URL anywhere and no `NEXT_PUBLIC_APP_URL`: the origin is
+  always derived from the current request (`new URL(request.url).origin` in
+  `app/auth/callback`, `window.location.origin` in `GoogleButton`, the `origin`
+  header for password-reset emails). Internal redirects are relative paths.
+  This is what keeps localhost and production independent.
+- Post-auth destination: `proxy.ts` sends unauthenticated hits on protected
+  routes to `/login?next=<path+query>`. `next` flows through login/signup
+  (hidden form field), the Google OAuth `redirectTo`, and `/auth/callback`.
+  Every consumer validates it with `safeRedirectPath()` (`lib/auth/redirect.ts`):
+  same-origin relative paths only, no guest pages, fallback `/chat`.
+- Supabase dashboard (Authentication → URL Configuration) must hold:
+  Site URL `https://ariel-ai-chi.vercel.app`; Redirect URLs
+  `https://ariel-ai-chi.vercel.app/**` and `http://localhost:3000/**`. Any
+  `redirectTo` not in that list silently falls back to the Site URL.
+- Cookies are set by `@supabase/ssr` defaults (host-only, no `Domain`), so each
+  origin has its own session. No CORS config: the browser only calls same-origin
+  `/api/*` and Supabase directly.
+
 ## Invariants
 
 1. Provider keys are always stored encrypted and decrypted only at request time

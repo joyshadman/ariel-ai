@@ -21,7 +21,13 @@ async function googleEnabled(): Promise<boolean> {
   }
 }
 
-export function GoogleButton({ label = "Continue with Google" }: { label?: string }) {
+export function GoogleButton({
+  label = "Continue with Google",
+  next,
+}: {
+  label?: string;
+  next?: string;
+}) {
   const [loading, setLoading] = useState(false);
   const [error, setError] = useState<string | null>(null);
 
@@ -35,10 +41,15 @@ export function GoogleButton({ label = "Continue with Google" }: { label?: strin
       return;
     }
 
+    const callback = new URL("/auth/callback", window.location.origin);
+    if (next) {
+      callback.searchParams.set("next", next);
+    }
+
     const supabase = createClient();
     const { error: oauthError } = await supabase.auth.signInWithOAuth({
       provider: "google",
-      options: { redirectTo: `${window.location.origin}/auth/callback` },
+      options: { redirectTo: callback.toString() },
     });
     if (oauthError) {
       setError("Google sign-in is unavailable right now.");

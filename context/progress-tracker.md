@@ -133,6 +133,22 @@ Make the initial commit (all current work is uncommitted).
     `deleteMany`, 404 otherwise); mobile history drawer. Auto-title only
     applies while a chat is still "New chat", so renames stick.
 
+- **Auth redirect fix (2026-10-14)**:
+  - Root cause of "production login lands on localhost": Supabase Site URL was
+    `http://localhost:3000` and the production URL was not in the Redirect
+    URLs allowlist, so GoTrue replaced the production `redirect_to` with
+    localhost (proved by probing `/auth/v1/verify` with a bad token: prod,
+    localhost-allowed and bogus `redirect_to` → prod and bogus fell back to
+    `http://localhost:3000/`). App code was already origin-relative.
+  - Code: `lib/auth/redirect.ts` (`safeRedirectPath`, `isGuestPath`), `next`
+    preserved through `proxy.ts` → login/signup → Google OAuth →
+    `/auth/callback`; tests in `tests/unit/auth-redirect.test.ts`.
+  - React Router evaluated and rejected — Next App Router already does
+    client-side navigation.
+  - Verified locally (prod build, real browser): client nav + back/forward,
+    protected → `/login?next=`, signup/login honor `next` and reject `//evil`,
+    refresh nested route, logout, session restore.
+
 ## In Progress
 
 - None — the full authenticated path is verified. Remaining work is commit +
@@ -145,6 +161,11 @@ Make the initial commit (all current work is uncommitted).
    (login → add key → chat stream → chat persists) to lock the flow in.
 
 ## Open Questions
+
+- **Supabase URL config (manual, blocks prod OAuth/email links)**: set Site URL
+  to `https://ariel-ai-chi.vercel.app` and add Redirect URLs
+  `https://ariel-ai-chi.vercel.app/**` and `http://localhost:3000/**`. Re-run
+  the `/auth/v1/verify` probe afterwards; prod `redirect_to` must be echoed back.
 
 - **Google OAuth**: enabled in Supabase (client `701673619469-l3g6…`), but
   Google returns `redirect_uri_mismatch` until

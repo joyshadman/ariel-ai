@@ -8,7 +8,7 @@ import { Icon } from "@/components/Icon";
 import { Logo } from "@/components/Logo";
 import { useNavigation } from "@/components/navigation";
 
-export function Signup() {
+export function Signup({ next }: { next?: string }) {
   const { navigate } = useNavigation();
   const [showPassword, setShowPassword] = useState(false);
   const [state, action, pending] = useActionState(signupAction, null);
@@ -33,7 +33,7 @@ export function Signup() {
         </p>
 
         <div className="mt-7">
-          <GoogleButton label="Sign up with Google" />
+          <GoogleButton label="Sign up with Google" next={next} />
         </div>
 
         <div className="my-6 flex items-center gap-3">
@@ -45,6 +45,7 @@ export function Signup() {
         </div>
 
         <form action={action} className="flex flex-col gap-4" noValidate>
+          {next ? <input type="hidden" name="next" value={next} /> : null}
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-[12px] font-medium text-ink">
               Email

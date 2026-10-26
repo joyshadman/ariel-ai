@@ -1,5 +1,6 @@
 import { createServerClient } from "@supabase/ssr";
 import { NextResponse, type NextRequest } from "next/server";
+import { isGuestPath, safeRedirectPath } from "@/lib/auth/redirect";
 
 export async function proxy(request: NextRequest) {
   let response = NextResponse.next({ request });
@@ -34,17 +35,16 @@ export async function proxy(request: NextRequest) {
     pathname.startsWith("/chat") ||
     pathname.startsWith("/settings") ||
     pathname.startsWith("/reset-password");
-  const isGuestRoute =
-    pathname.startsWith("/login") ||
-    pathname.startsWith("/signup") ||
-    pathname.startsWith("/forgot-password");
 
   if (isProtected && !user) {
-    return NextResponse.redirect(new URL("/login", request.url));
+    const login = new URL("/login", request.url);
+    login.searchParams.set("next", `${pathname}${request.nextUrl.search}`);
+    return NextResponse.redirect(login);
   }
 
-  if (isGuestRoute && user) {
-    return NextResponse.redirect(new URL("/chat", request.url));
+  if (isGuestPath(pathname) && user) {
+    const next = safeRedirectPath(request.nextUrl.searchParams.get("next"));
+    return NextResponse.redirect(new URL(next, request.url));
   }
 
   return response;

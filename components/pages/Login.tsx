@@ -11,9 +11,11 @@ import { useNavigation } from "@/components/navigation";
 export function Login({
   oauthError = false,
   resetError = false,
+  next,
 }: {
   oauthError?: boolean;
   resetError?: boolean;
+  next?: string;
 }) {
   const { navigate } = useNavigation();
   const [showPassword, setShowPassword] = useState(false);
@@ -39,7 +41,7 @@ export function Login({
         </p>
 
         <div className="mt-7">
-          <GoogleButton />
+          <GoogleButton next={next} />
         </div>
 
         <div className="my-6 flex items-center gap-3">
@@ -51,6 +53,7 @@ export function Login({
         </div>
 
         <form action={action} className="flex flex-col gap-4" noValidate>
+          {next ? <input type="hidden" name="next" value={next} /> : null}
           <div className="flex flex-col gap-2">
             <label htmlFor="email" className="text-[12px] font-medium text-ink">
               Email
