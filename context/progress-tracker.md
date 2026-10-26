@@ -148,6 +148,16 @@ Make the initial commit (all current work is uncommitted).
   - Verified locally (prod build, real browser): client nav + back/forward,
     protected → `/login?next=`, signup/login honor `next` and reject `//evil`,
     refresh nested route, logout, session restore.
+- **Navigation speed + OAuth fallback (2026-10-26)**:
+  - Nav used `router.push` from buttons, so nothing was prefetched;
+    `NavigationProvider` now `router.prefetch`es every route on mount.
+  - `loading.tsx` skeletons for `/chat` and `/settings` (now ◐ partial
+    prerender) so navigation paints immediately while data streams.
+  - `proxy.ts` uses `getClaims()` (local JWT verify) instead of `getUser()`
+    (network call per request); pages still verify via `getUser()` in the DAL.
+  - `proxy.ts` forwards `/?code=` to `/auth/callback` (Site URL fallback).
+  - Next 16.4.0 → 16.4.3 (build failed the vulnerability check).
+  - React Router again declined — prefetching was the actual fix.
 
 ## In Progress
 

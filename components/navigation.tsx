@@ -1,6 +1,6 @@
 "use client";
 
-import { createContext, useCallback, useContext } from "react";
+import { createContext, useCallback, useContext, useEffect } from "react";
 import { usePathname, useRouter } from "next/navigation";
 
 export type Page =
@@ -54,6 +54,12 @@ export function NavigationProvider({
 }) {
   const pathname = usePathname();
   const router = useRouter();
+
+  useEffect(() => {
+    for (const href of new Set(Object.values(ROUTES).map((r) => r.split("#")[0]))) {
+      router.prefetch(href);
+    }
+  }, [router]);
 
   const navigate = useCallback(
     (next: Page) => {
