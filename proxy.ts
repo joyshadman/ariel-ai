@@ -3,6 +3,13 @@ import { NextResponse, type NextRequest } from "next/server";
 import { isGuestPath, safeRedirectPath } from "@/lib/auth/redirect";
 
 export async function proxy(request: NextRequest) {
+  const code = request.nextUrl.searchParams.get("code");
+  if (request.nextUrl.pathname === "/" && code) {
+    const callback = new URL("/auth/callback", request.url);
+    callback.searchParams.set("code", code);
+    return NextResponse.redirect(callback);
+  }
+
   let response = NextResponse.next({ request });
 
   const supabase = createServerClient(
